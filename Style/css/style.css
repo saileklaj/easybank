@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../images/Funds/Login-fund.jpg);
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.content {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.LoginBox {
+    width: 320px;
+    height: 420px;
+    background: #000000a4;
+    color: #ffffff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 3%;
+    display: inline-block;
+}
+
+.error {
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: -40px;
+	padding: 5px 0 5px 0;
+	background-color: #C62707;
+	text-align: center;
+	color:#FCEFEC;
+}
+
+.LoginBox .avatarlog {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.LoginBox h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.LoginBox input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.LoginBox input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.LoginBox input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.LoginBox input[type="submit"] {
+    padding: center;
+    outline: none;
+    height: 40px;
+    background: #5b1b96b6;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 18px;
+}
+
+.LoginBox input[type="submit"]:hover {
+    background: #682f9e;
+}
+
+.LoginBox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.LoginBox a:hover {
+    color: #fff;
+}
