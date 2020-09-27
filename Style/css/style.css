@@ -29,14 +29,18 @@ body {
     display: inline-block;
 }
 
-.error {
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: -40px;
-	padding: 5px 0 5px 0;
-	background-color: #C62707;
-	text-align: center;
-	color:#FCEFEC;
+.errores {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: -10px;
+    padding: 2px 0 2px 0;
+    background-color: #C62707;
+    text-align: center;
+    color:#FCEFEC;
+}
+
+.errores p{
+    margin: 2px;
 }
 
 .LoginBox .avatarlog {
