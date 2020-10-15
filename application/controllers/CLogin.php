@@ -11,7 +11,7 @@ class Clogin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('plantilla/header');
+		$this->load->view('plantilla/head');
 		$this->load->view('login');
 		$this->load->view('plantilla/footer');
 	}
@@ -27,10 +27,17 @@ class Clogin extends CI_Controller {
 			$result=$this->Mlogin->Mvalidar($usuario,$password);
 			if(!$result){
 				$this->session->set_flashdata('er',' Usuario y/o contraseña incorrectos');
+				$this->index();
 			}else{
-				$this->load->view('plantilla/header');
-				$this->load->view('plantilla/footer');
+				
+				
+				$this->session->set_userdata('nombreusuario',$result->usu_alias);
+				//$sesion=array('nombreusuario'=>$result->usu_alias);
+				//$this->session->set_userdata($sesion);
+				redirect('Ccliente');
 			}
 		}
-	}	
+	}
+
+		
 }

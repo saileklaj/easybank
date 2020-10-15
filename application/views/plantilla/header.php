@@ -1,12 +1,17 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Form Login</title>
-	<link rel="stylesheet" href="<?php echo base_url();?>Style/css/style.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>Style/css/Interface.css">
-	<script type="text/javascript" src="https://kit.fontawesome.com/09807b727e.js" crossoigin="anonymous"></script>
-</head>
-<body>
+    <!-- ------------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Here Start Header and menu Bar -->
+
+
+    <ul>
+        <li><a href="#" class="logo">Logo</a></li>
+        <li><a href="Welcome.php" class="active">Inicio</a></li>
+        <li><a href="Profile.php">Perfil</a></li>
+        <li><a href="Clients.php">Clientes</a></li>
+        <li><a href="About.php">Acerca</a></li>
+        <li style="float:right"><a href='<?php echo site_url("Ccliente/cerrarsesion"); ?>'> Exit </a></li>
+    </ul>
+
+   
+<div>
+    <!--<p class="welcome"><?php //echo " Welcome $Username ";?></p>-->
+</div>
