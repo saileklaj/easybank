@@ -13,7 +13,6 @@ class Mcliente extends CI_Model{
 	}
 
 	function consultar_prestamistas(){
-		$res=$this->db->query("call saldo('$usu_id')");
-		print_r();
+		
 	}
 }

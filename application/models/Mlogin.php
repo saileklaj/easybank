@@ -12,12 +12,9 @@ class Mlogin extends CI_Model{
 			return false;
 		*/
 		$res=$this->db->query("call login('$usu','$pass')");
-
-		//print_r($res->usu_alias);
-
-		if($res->num_rows()>0)
-			return $res->row();
-		else
+		if($res->num_rows()>0){
+			return $res->result();
+		}else
 			return false;
 	}
 }
