@@ -1,25 +1,23 @@
 <?php 
-	if(!empty($saldo)){
-		foreach ($saldo as $key) {
-			$datos=array('saldo'=>$key->cta_saldo,
-						'fechaproximo'=>$key->cuo_fecha,
-						'valorproximo'=>$key->cuo_cantidad,
-						'fechapago'=>$key->pag_fecha,
-						'valorpago'=>$key->pag_cantidad);
-			/*
-		echo $key->cta_saldo
-		echo $key->cta_saldo*/
+		if ($saldo) {
+			for ($i=0; $i<count($saldo); $i++) {
+			$datos=$saldo[$i];
+			}
+		}else{
+			
 		}
-	}
+		
+		
+	
 	?>
 <div class="cont">
-	<h1 style="margin:5px 0 0 0" class="textcolor1"> <?php echo $this->session->userdata('nombreusuario');?> </h1>
+	<h1 style="margin:5px 0 0 0" class="textcolor1"> <?php echo $this->session->userdata('usu_id');?> </h1>
 
 	<div class="width50 letf">	
 	<div>
 		
 		<h2 class="textcolor1">Saldo: </h2>
-		<h3 class="textcolor1"><p style="display:inline-block">$</p> <?php echo number_format($datos['saldo']);?> </h3>
+		<h3 class="textcolor1"><p style="display:inline-block">$</p> <?php echo number_format($datos['cta_saldo']);?> </h3>
 	</div>
 	<div>
 		<h3 class="textcolor1"><a href="<?php echo '#';?>" class="textcolor1"> Detalles del prestamo </a></h3>
@@ -39,8 +37,8 @@
 					<th><h3 class="textcolor1">Valor</h3></th>
 				</tr>
 				<tr>
-					<td class="space-right textcolor1"><?php echo $datos['fechaproximo'];?></td>
-					<td class="space-right textcolor1"><?php echo number_format($datos['valorproximo']);?></td>
+					<td class="space-right textcolor1"><?php echo $datos['cuo_fecha'];?></td>
+					<td class="space-right textcolor1"><?php echo number_format($datos['cuo_cantidad']);?></td>
 				</tr>
 			</table>
 		</div>
@@ -52,8 +50,8 @@
 					<td class="space-right textcolor1"><h3>Valor</h3></td>
 				</tr>
 				<tr>
-					<td class="space-right textcolor1"><?php echo $datos['fechapago'];?></td>
-					<td class="space-right textcolor1"><?php echo number_format($datos['valorpago']);?></td>
+					<!--<td class="space-right textcolor1"><?php //echo $datos['pag_fecha'];?></td>
+					<td class="space-right textcolor1"><?php //echo number_format($datos['pag_cantidad']);?></td>-->
 				</tr>
 			</table>
 		</div>

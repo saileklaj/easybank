@@ -13,7 +13,6 @@ class Clogin extends CI_Controller {
 	{
 		$this->load->view('plantilla/head');
 		$this->load->view('login');
-		//$this->load->view('plantilla/footer');
 	}
 
 	function login(){
@@ -29,20 +28,10 @@ class Clogin extends CI_Controller {
 				$this->session->set_flashdata('er',' Usuario y/o contraseña incorrectos');
 				$this->index();
 			}else{
-				
-				//////////////////////////////////
-				
-				//////////////////////////////////
-				$array=array("nombreusuario"=>$result->usu_alias,"idusuario"=>$result->usu_id,"menu"=>$result->usu_codigo);
+				$array=array("resultado"=>$result);
 				$this->session->set_userdata($array);
-				
-				//$sesion=array('nombreusuario'=>$result->usu_alias);
-				//$this->session->set_userdata($sesion);
-				
-				//redirect(site_url('Ccliente'));
+				redirect('Ccliente');
 			}
 		}
-	}
-
-		
+	}		
 }

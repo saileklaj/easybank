@@ -13,7 +13,7 @@ class Mlogin extends CI_Model{
 		*/
 		$res=$this->db->query("call login('$usu','$pass')");
 		if($res->num_rows()>0){
-			return $res->result();
+			return $res->result_array();
 		}else
 			return false;
 	}
