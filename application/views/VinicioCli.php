@@ -1,30 +1,16 @@
-<?php 
-		if ($saldo) {
-			for ($i=0; $i<count($saldo); $i++) {
-			$datos=$saldo[$i];
-			}
-		}else{
-			
-		}
-		
-		
-	
-	?>
+
 <div class="cont">
-	<h1 style="margin:5px 0 0 0" class="textcolor1"> <?php echo $this->session->userdata('usu_id');?> </h1>
+	<h1 style="margin:5px 0 0 0" class="textcolor1"> <?php echo $this->session->userdata('alias');?> </h1>
 
 	<div class="width50 letf">	
-	<div>
-		
-		<h2 class="textcolor1">Saldo: </h2>
-		<h3 class="textcolor1"><p style="display:inline-block">$</p> <?php echo number_format($datos['cta_saldo']);?> </h3>
-	</div>
-	<div>
-		<h3 class="textcolor1"><a href="<?php echo '#';?>" class="textcolor1"> Detalles del prestamo </a></h3>
-	</div>
-
-		
-		
+		<div>
+			
+			<h2 class="textcolor1">Saldo: </h2>
+			<h3 class="textcolor1"><p style="display:inline-block">$</p> <?php echo number_format($saldo);?> </h3>
+		</div>
+		<div>
+			<h3 class="textcolor1"><a href="<?php echo '#';?>" class="textcolor1"> Detalles del prestamo </a></h3>
+		</div>
 	</div>
 	
 
@@ -37,8 +23,8 @@
 					<th><h3 class="textcolor1">Valor</h3></th>
 				</tr>
 				<tr>
-					<td class="space-right textcolor1"><?php echo $datos['cuo_fecha'];?></td>
-					<td class="space-right textcolor1"><?php echo number_format($datos['cuo_cantidad']);?></td>
+					<td class="space-right textcolor1"><?php echo $fechacuota;?></td>
+					<td class="space-right textcolor1"><?php echo number_format($cantidadcuota);?></td>
 				</tr>
 			</table>
 		</div>

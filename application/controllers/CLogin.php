@@ -28,8 +28,17 @@ class Clogin extends CI_Controller {
 				$this->session->set_flashdata('er',' Usuario y/o contraseña incorrectos');
 				$this->index();
 			}else{
-				$array=array("resultado"=>$result);
+				//print_r($result);
+				for ($i=0; $i < count($result); $i++) { 
+					$resultado=$result[$i];
+					$menu[$i]=$resultado['men_codigo'];
+				}
+				//print_r($resultado);
+				$array=array("idusu"=>$resultado['usu_id'],
+							 "alias"=>$resultado['usu_alias']);
+
 				$this->session->set_userdata($array);
+				$this->session->set_userdata('resultado',$menu);
 				redirect('Ccliente');
 			}
 		}

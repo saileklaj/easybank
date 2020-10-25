@@ -14,22 +14,31 @@ Class Ccliente extends CI_Controller{
 	}
 
 	public function index(){
-		$usu_id= $this->session->userdata('usu_id');
+		$usu_id= $this->session->userdata('idusu');
 		
-		$saldo=array('saldo' =>$this->Mcliente->Msaldo($usu_id));
-		
-		if (is_null($saldo['saldo'])) {
-			echo "string";
+		$saldo=/*array('saldo' =>*/$this->Mcliente->Msaldo($usu_id);//);
+		//print_r($saldo);
+		if ($saldo/*['saldo']*/) {
+			///////////////////////////
+			for ($i=0; $i<count($saldo); $i++) {
+				$consulta=$saldo[$i];
+			}
+			$datos=array('saldo' =>$consulta['cta_saldo'],
+						'fechacuota'=>$consulta['cuo_fecha'],
+						'cantidadcuota'=>$consulta['cuo_cantidad']);
+			////////////////////////////
 		}else{
-			echo "NOstring";
+			$datos=array('saldo' =>0,
+						'fechacuota'=>"",
+						'cantidadcuota'=>0);
+			
 		}
-
-
-		/*$this->load->view('plantilla/head');
+		//print_r($datos);
+		$this->load->view('plantilla/head');
 		$this->load->view('plantilla/header');
-		$this->load->view('VinicioCli',$saldo);
-		$this->load->view('plantilla/footer');*/
-		$this->load->view('plantilla/header');
+		$this->load->view('VinicioCli',$datos);
+		$this->load->view('plantilla/footer');
+		
 	}
 
 	function cerrarsesion(){
